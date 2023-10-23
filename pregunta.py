@@ -14,7 +14,7 @@ def clean_data():
     df.reset_index(inplace=True,drop=True)
     
     # Date check  
-    df['fecha_de_beneficio'] = pd.to_datetime(df['fecha_de_beneficio'],dayfirst=True)
+    df['fecha_de_beneficio'] = pd.to_datetime(df['fecha_de_beneficio'], format='mixed', dayfirst=True)
     
     df.dropna(axis='index',inplace=True)
     df.drop_duplicates(inplace=True)
